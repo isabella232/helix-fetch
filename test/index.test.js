@@ -499,4 +499,11 @@ describe('Fetch Tests', () => {
     const json = await resp.json();
     assert(json !== null && typeof json === 'object');
   });
+
+  it('redirects work (HTTP/2)', async () => {
+    const resp = await fetch('https://nghttp2.org/httpbin/absolute-redirect/3', { redirect: 'follow' });
+    assert.equal(resp.status, 200);
+    assert.equal(resp.httpVersion, 2);
+    assert.equal(resp.redirected, true);
+  });
 });

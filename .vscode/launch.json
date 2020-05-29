@@ -20,7 +20,16 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/index.js"
+      "program": "${workspaceFolder}/src/index.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch current file",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${file}"
     },
     {
         "type": "node",
